@@ -1,0 +1,113 @@
+*{
+ transition: all 0.3s;
+    font-family: "Open Sans-Regular", Helvetica;
+}
+#navItems i{
+   background-color: #0029ff;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   color: white;
+   display: grid;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+}
+#navItems i:hover{
+   background-color: black;
+
+}
+#dashContainer{
+    width: 8%;
+    border-top-right-radius: 20px;
+   
+    
+    height: 100vh;
+}
+#dashboard{
+    width: 100%;
+    box-shadow: 1px 1px 4px 2px #00000040;
+    background-color: white;
+    z-index: 99;
+    height: 100%;
+   
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+   
+
+}
+#blackBar{
+    height: 60px;
+    border-top-right-radius: 20px;
+    background-color: black;
+    cursor: pointer;
+  display: grid;
+    color: white;
+    justify-content: space-between;
+   
+    align-items: center;
+    justify-content: end;
+    
+    
+  
+   
+ 
+}
+#blackBar h4{
+    width: 70%;
+
+  
+}
+#blackBar.expandDashboard{
+    display: flex;
+}
+#content{
+    width: 88%;
+
+}
+#noticeBoard{
+    height: 60vh;
+    width: 5%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+#blackColumn{
+    width: 30%;
+    background-color: black;
+    height: 100%;
+    border-top-left-radius: 20px;
+ 
+    border-bottom-left-radius: 20px;
+}
+
+ 
+#dashboard.expandDashboard{
+   width: 35vw;
+ 
+ 
+    
+}
+#dashItems{
+    display: none;
+    width: 80%;
+   
+    
+}
+#numbering{
+   
+    text-align: center;
+    border:1px solid #0029ff;
+    border-radius:10px;
+    padding:0 1.5rem;
+}
+@media screen  and (max-width:760px) {
+    #numbering{
+        
+    border: none;
+       padding: 0 0.2rem;
+
+    }
+    
+}
+ 
