@@ -162,6 +162,9 @@
         display: block;
         margin: 0 auto;
     }
+ #dashboard.expandDashboard{
+    width: 90vw;
+  }
     
     
 }
