@@ -123,53 +123,53 @@ const dashItems=document.getElementById("dashItems");
 
 blackBar.addEventListener("click",async ()=>{
 
- if(dashboard.classList.contains("expandDashboard")){
+  if(dashboard.classList.contains("expandDashboard")){
  
-  dashItems.style.display="none";
-  blackBar.innerHTML=`<i class="fa-solid fa-circle-arrow-left fs-2"></i>`;
-  dashboard.classList.remove("expandDashboard");
-  blackBar.classList.remove("expandDashboard");
-  numbering.style.display="initial";
-
-  await new Promise((resolve)=>setTimeout(()=>resolve("This is just for loading time"),500));
-
-  blackBar.innerHTML=`<i class="fa-solid fa-circle-arrow-right fs-2"></i>`;
- 
- }
- else{    
+    dashItems.style.display="none";
+    blackBar.innerHTML=`<i class="fa-solid fa-circle-arrow-left fs-2"></i>`;
+    dashboard.classList.remove("expandDashboard");
+    blackBar.classList.remove("expandDashboard");
+    numbering.style.display="initial";
   
-  while(dashItems.firstChild){
-  dashItems.removeChild(dashItems.firstChild);
- }
-        numbering.style.display="none";
-        let div=document.createElement("div");
-        div.classList.add(...["col-12","mx-auto"]);
-         let h4=document.createElement("h4");
-        
-          h4.innerHTML=`${obj.tasks[0].task_title}`;
-          let ul=document.createElement("ul");
-         for(let i in obj.tasks[0].assets){
-          let li=document.createElement("li");
-          li.innerHTML=`${obj.tasks[0].assets[i].asset_title}`;
-          ul.appendChild(li);
-        
-         }
-         div.appendChild(h4);
-         div.appendChild(ul);
-         dashItems.appendChild(div);
-      
-         dashboard.classList.add("expandDashboard");
-       
-         await new Promise((resolve)=>setTimeout(()=>resolve("This is just for loading time"),500));
+    await new Promise((resolve)=>setTimeout(()=>resolve("This is just for loading time"),500));
   
-         blackBar.classList.add("expandDashboard");
-         blackBar.innerHTML=`<h4>Journey Board</h4> <i class="fa-solid fa-circle-arrow-left fs-2"></i>`;
-         dashItems.style.display="initial";
- 
-      
-
-
- }
-
-
+    blackBar.innerHTML=`<i class="fa-solid fa-circle-arrow-right fs-2"></i>`;
+   
+   }
+   else{    
+    
+    while(dashItems.firstChild){
+    dashItems.removeChild(dashItems.firstChild);
+   }
+          numbering.style.display="none";
+          let div=document.createElement("div");
+          div.classList.add(...["col-12","mx-auto"]);
+           let h4=document.createElement("h4");
+          
+            h4.innerHTML=`${obj.tasks[0].task_title}`;
+            let ul=document.createElement("ul");
+           for(let i in obj.tasks[0].assets){
+            let li=document.createElement("li");
+            li.innerHTML=`${obj.tasks[0].assets[i].asset_title}`;
+            ul.appendChild(li);
+          
+           }
+           div.appendChild(h4);
+           div.appendChild(ul);
+           dashItems.appendChild(div);
+        
+           dashboard.classList.add("expandDashboard");
+         
+           await new Promise((resolve)=>setTimeout(()=>resolve("This is just for loading time"),500));
+    
+           blackBar.classList.add("expandDashboard");
+           blackBar.innerHTML=`<h4>Journey Board</h4> <i class="fa-solid fa-circle-arrow-left fs-2"></i>`;
+           dashItems.style.display="initial";
+   
+        
+  
+  
+   }
+  
+  
 })
