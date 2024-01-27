@@ -9,26 +9,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <!-- The styling for this page is integrated with bootstrap and manual css in the style.css file.  -->
+
+    <!--This is the navigation Bar-->
     <nav class="shadow p-3"> 
-        <div class="row align-items-center"><div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 mb-3"><img src="https://deepthought.education/assets/images/logo/logo.svg" class=" col-lg-4 col-md-3 col-sm-6 col-xs-6 d-block" alt="companyLogo"></div><div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 d-flex justify-content-between" id="navItems"><i class="fa-solid fa-house"></i><i class="fa-solid fa-binoculars"></i> <i class="fa-solid fa-screwdriver-wrench"></i><i class="fa-solid fa-bell"></i><i class="fa-solid fa-user"></i><i class="fa-solid fa-ellipsis-vertical"></i></div></div>
+        <div class="row align-items-center">
+            <!--Assest goes here-->
+            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 mb-3">
+                <img src="https://deepthought.education/assets/images/logo/logo.svg" class=" col-lg-4 col-md-3 col-sm-6 col-xs-6 d-block" alt="companyLogo">
+            </div>
+            <!--Icons are over here-->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 d-flex justify-content-between" id="navItems"><i class="fa-solid fa-house"></i><i class="fa-solid fa-binoculars"></i> <i class="fa-solid fa-screwdriver-wrench"></i><i class="fa-solid fa-bell"></i><i class="fa-solid fa-user"></i><i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+        </div>
     </nav>
+    <!--The container of journey board, content in the middle and notice board at the end-->
     <main class="d-flex">
-      
+      <!-- This is the code for journey board -->
        <div class=" position-relative  bg-white " id="dashContainer">
         <div class="position-absolute " id="dashboard">
             <div class="mb-5 p-2" id="blackBar"> <i class="fa-solid fa-circle-arrow-right fs-2  "></i></div> 
             <div class="p-3   bg-white ">
                 <span class="    py-3" id="numbering">1</span>
-                <div id="dashItems" class="row" >
-                        
-
-                </div>
+                <div id="dashItems" class="row" ></div>
             </div>
 
     
         </div>
        </div>
-
+<!-- This is the code for Content -->
         <div class=" container  p-4" id="content"  >
             <div class="row p-2 my-3  ">
                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12"><h1 id="techProjectMan"> </h1></div>
@@ -52,11 +61,14 @@
             
         </div>
 
+        <!-- This is the code for Notice Board  -->
+
         <div class="shadow d-flex" id="noticeBoard">
             <div class=" " id="blackColumn"><span><i class="fa-solid fa-xmark  "></i></span><span>N o t i c e &nbsp;  B o a r d</span> </div> 
             <div></div>
         </div>
-    
+
+    <!-- This is the code for help Icons positioned at the bottom end of the section  -->
     <div class="position-relative my-3">
         <div class="  position-absolute bottom-0 end-0 d-flex flex-column p-3" id="footIcons">
             <i class="fa-solid fa-circle-question my-3"></i>

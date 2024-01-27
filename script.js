@@ -1,3 +1,4 @@
+ /*Copied the JSON object since I am unable to fetch it from the url due to cors policy*/
  const obj={
     "_id": {
       "$oid": "63b64dc9e3b230ebb60a495d"
@@ -80,23 +81,32 @@
     "viewcount": 0,
     "publishedAt": 1672893847792
   }
-
-  const  blackBar=document.getElementById("blackBar");
+//getting reference of all HTML elements
+const  blackBar=document.getElementById("blackBar");
 const assetsContainer=document.getElementById("assetsContainer");
 const techProjectMan=document.getElementById("techProjectMan");
 const exploreProject=document.getElementById("exploreProject");
 const projectDesc=document.getElementById("projectDesc");
+const numbering=document.getElementById("numbering");
+const dashboard=document.getElementById('dashboard');
+const dashItems=document.getElementById("dashItems");
 
+//function to display content of the assests, title, description etc.. and calling it right away to display the details on page load.
 async function render(){
                 
  
         techProjectMan.innerHTML=obj.title;
         exploreProject.innerHTML=obj.tasks[0].task_title;
         projectDesc.innerHTML=obj.tasks[0].task_description;
-        let classes=["col-lg-6","col-md-6","col-sm-12","col-xs-12","p-3","my-3"]
+
+        let classes=["col-lg-6","col-md-6","col-sm-12","col-xs-12","p-3","my-3"];
+        //looping through assests array to make sections dynamically.
     for(let i in obj.tasks[0].assets){
+          //creating div element
           let div=document.createElement("div");
+            //adding  styles to it
           div.classList.add(...classes);
+            //creating multiple elements in the div. The element type in the innerHTML also changes based on assest_type.
           div.innerHTML=`
           <div class="  shadow rounded col-12">
             <div class="col-12 d-flex text-white bg-dark p-2 rounded-top"><h5 class=" text-center col-11 ">${obj.tasks[0].assets[i].asset_title} </h5><span class="col d-grid align-items-center justify-content-center"><i class="fa-solid fa-circle-info fs-4"></i></span></div>
@@ -108,7 +118,7 @@ async function render(){
           
           </div>
           `;
-    
+               //appending the div child with added content to the parent assetContainer in each iteration .
           assetsContainer.appendChild(div);
 
 
@@ -116,31 +126,33 @@ async function render(){
 } render();
 
 
-const numbering=document.getElementById("numbering");
-const dashboard=document.getElementById('dashboard');
-const dashItems=document.getElementById("dashItems");
 
+// event to expand the journey board.
 
 blackBar.addEventListener("click",async ()=>{
-
+// checking if it is already expanded and  to close it.
   if(dashboard.classList.contains("expandDashboard")){
- 
+   //removing unnecessary content before compressing.
     dashItems.style.display="none";
+    //remove the journey board text before compressing
     blackBar.innerHTML=`<i class="fa-solid fa-circle-arrow-left fs-2"></i>`;
+      //remove the styles from two elements.
     dashboard.classList.remove("expandDashboard");
     blackBar.classList.remove("expandDashboard");
+    //displaying the project number
     numbering.style.display="initial";
   
     await new Promise((resolve)=>setTimeout(()=>resolve("This is just for loading time"),500));
-  
+   //changing the icon to right since it is compressed.
     blackBar.innerHTML=`<i class="fa-solid fa-circle-arrow-right fs-2"></i>`;
    
    }
    else{    
-    
+     //removing all existing childs from dashItems. This logic is created in the assuption that there are more projects and based on the obj the content can get generated.
     while(dashItems.firstChild){
     dashItems.removeChild(dashItems.firstChild);
-   }
+   }         //creating div,ul,li from parent to childs hierarchy and adding them in the dashItems at the end.
+      //I could have made static elements and text but I came up with this logic if obj has changed and there are more projects/tasks.
           numbering.style.display="none";
           let div=document.createElement("div");
           div.classList.add(...["col-12","mx-auto"]);
@@ -157,13 +169,15 @@ blackBar.addEventListener("click",async ()=>{
            div.appendChild(h4);
            div.appendChild(ul);
            dashItems.appendChild(div);
-        
+            //after appending the elements and adding the content expand the journey board 
            dashboard.classList.add("expandDashboard");
          
            await new Promise((resolve)=>setTimeout(()=>resolve("This is just for loading time"),500));
-    
+            
            blackBar.classList.add("expandDashboard");
+           //change the icon to left since it is expanded.
            blackBar.innerHTML=`<h4>Journey Board</h4> <i class="fa-solid fa-circle-arrow-left fs-2"></i>`;
+           //finally display the container 
            dashItems.style.display="initial";
    
         

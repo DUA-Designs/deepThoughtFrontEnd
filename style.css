@@ -2,6 +2,7 @@
  transition: all 0.3s;
     font-family: "Open Sans-Regular", Helvetica;
 }
+/* css related to NavBar*/
 #navItems i{
    background-color: #0029ff;
    width: 30px;
@@ -17,6 +18,7 @@
    background-color: black;
 
 }
+/* css related to journey Board*/
 #dashContainer{
     width: 8%;
     border-top-right-radius: 20px;
@@ -62,10 +64,12 @@
 #blackBar.expandDashboard{
     display: flex;
 }
+
 #content{
     width: 88%;
 
 }
+/* css related to Notice Board*/
 #noticeBoard{
     height: 60vh;
     width: 5%;
@@ -95,7 +99,7 @@
 }
 
 
- 
+ /* dynamic css applied to dashboard by adding classes*/
 #dashboard.expandDashboard{
    width: 35vw;
  
@@ -115,6 +119,7 @@
     border-radius:10px;
     padding:0 1.5rem;
 }
+/* Css for help icons*/
 #footIcons i{
     width: 70px;
     height: 70px;
@@ -131,6 +136,7 @@
 #footIcons i:hover{
     background-color: black;
 }
+/* media queries for making the website responsive*/
 @media screen  and (max-width:760px) {
     #numbering{
         
@@ -162,10 +168,13 @@
         display: block;
         margin: 0 auto;
     }
- #dashboard.expandDashboard{
+     
+#dashboard.expandDashboard{
     width: 90vw;
-  }
-    
+  
+  
+     
+ }
     
 }
  
